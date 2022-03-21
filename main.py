@@ -820,17 +820,7 @@ def main(argv):
     print('Info: metrics result = {}'.format(metric_res))
     print('Info: metric size = {}'.format(metric_size))
 
-    # do report
-    try:
-        report_result(args['callback_url'], args['task_id'], metric_res)
-    except Exception as e:
-        logging.exception("report result error.", e)
-
-    metric_res_json = json.dumps(metric_res)
-    f_out.write(metric_res_json)
     f_out.close()
-
-    return metric_res_json
 
 
 if __name__ == '__main__':
